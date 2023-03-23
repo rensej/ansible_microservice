@@ -1,0 +1,24 @@
+- hosts: 'Cluster-Managers'
+  gather_facts: False
+  tasks:
+  - name: run cimc validations results
+    community.docker.docker_container_exec:
+      container: cndp-utility-cisco
+      command: "python2.7 {{ CIMC_SCRIPT }} -t {{ PODTYPE }} -r {{ RACKTYPE }} -n {{ NUM_RACK }} -p {{ PODNAME }} -f {{ PHASE }} -c {{ CIQ }} --faults_check --cimcpass {{ CIMCPASS }}"
+      chdir: /home/scripts
+    register: cimc_validations
+
+  - name: cimc validations results
+    debug:
+      msg: "{{ PODNAME }}: {{ cimc_validations.stdout }}"
+
+  - name: run connection validations
+    community.docker.docker_container_exec:
+      container: cndp-utility-cisco
+      command: "python2.7 {{ CONNECTION_SCRIPT }} -t {{ PODTYPE }} -r {{ RACKTYPE }} -n {{ NUM_RACK }} -p {{ PODNAME }} -c {{ CIQ }} -f {{ PHASE }} --tacuser {{ cimc_user }} --tacpass {{ cimc_password }} --cimcpass {{ CIMCPASS }}"
+      chdir: /home/scripts
+    register: connection_validations
+
+  - name: connection validations results
+    debug:
+      msg: "{{ PODNAME }}: {{ connection_validations.stdout }}"
