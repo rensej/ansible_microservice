@@ -1,0 +1,10 @@
+# Host command Validations
+# Executes commands stored in file and stores the result on an output File
+
+- hosts: UPF
+  gather_facts: False
+  tasks:
+
+  - name: run command
+    cisco.ios.ios_command:
+      commands: reload -n

@@ -1,0 +1,14 @@
+    #CP and UP need to be executed separately due to connection expiry issues for UPs 
+    #while waiting for SSD collection for CP finishes
+- hosts: all
+  gather_facts: False
+  tasks:
+  - name: get_license 
+    register: license
+    cisco.ios.ios_command:
+      commands:  show license info
+  - set_fact:
+      expiration: "{{ license.stdout | first | regex_search('(\\s+)Expires(\\s+)(.+)\\n', '\\3') | first }} "
+      key_number: "{{ license.stdout | first | regex_search('(\\s+)Key Number(\\s+)(.+)\\n', '\\3') | first }} "
+  - debug:
+      msg: "{{ inventory_hostname }},{{ key_number }},{{ expiration }}"

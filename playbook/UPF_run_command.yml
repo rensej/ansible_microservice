@@ -1,0 +1,24 @@
+# Host command Validations
+# Executes commands stored in file and stores the result on an output File
+
+- hosts: UPF
+  gather_facts: False
+
+  vars:
+    output_path: /binded/scripts/results
+    current_date: "{{ hostvars['control'].current_date }}"
+  tasks:
+
+  - name: read command script for device
+    register: commands
+    shell: cat /binded/scripts/upgrade_sw_upfs.txt
+
+  - name: run command
+    cisco.ios.ios_command:
+      commands: "{{ item }}"
+    loop: "{{ commands.stdout_lines }}"
+    register: commands_execution
+
+  - debug:
+      msg: "-------------------------> {{ item.item  }}\n\n{{ item.stdout | first }}\n\n-------------------------"
+    loop: "{{ commands_execution.results }}" 

@@ -1,0 +1,71 @@
+# compare configuration diff 
+
+- hosts: local
+  gather_facts: False
+  tasks:
+  - name: Get localdate
+    register: localdate
+    shell: date +%Y%m%d
+  - set_fact: current_date={{ localdate.stdout }}
+
+- hosts: CP:UP
+  gather_facts: False
+
+  vars:
+    configuration_path: /collector/configs/{{ inventory_hostname }}
+    today_file: "{{ configuration_path }}/{{ inventory_hostname }}-{{ hostvars['control']['current_date'] }}.cfg"
+  tasks:
+
+  - name: Get Config Files in Folder to compare
+    find:
+      paths: "{{ configuration_path }}"
+    register: config_files
+
+  - name: Selecting latest stored file to compare
+    set_fact:
+      latest_config_file: "{{ (config_files.files | sort(attribute='mtime') | last).path }}"
+
+  - name: Files selected for comparison
+    debug:
+      msg: "{{ latest_config_file }}"
+
+  - name: Collect show boot
+    register: boots
+    cisco.ios.ios_command:
+      commands: show boot
+
+  - name: Highest priority config File
+    debug:
+      msg: "{{  boots.stdout | first | regex_search('    config (\\S+)','\\1') | first }}"
+
+  - name: Collect configuration
+    register: configuration
+    cisco.ios.ios_command:
+      commands: 
+      - "no timestamps"
+      - "show configuration url {{  boots.stdout | first | regex_search('    config (\\S+)','\\1') | first }}"
+
+  - name: Create output dir if doesn't exists
+    file:
+      path: "{{ configuration_path }}"
+      state: directory
+
+  - local_action:
+      module: copy
+      content: "{{ configuration.stdout | last | replace('\\n', '\n') }}"
+      dest: "{{ today_file }}"
+
+  - name: Remove timestamp line from config file
+    lineinfile:
+      path: "{{ today_file }}"
+      regexp: '^(\S+) (\S+) (\d+) (\d+):(\d+):(\d+) (\S+) (\d+)\n'
+      line: ''
+      state: absent
+      firstmatch: yes
+
+  - name: Config changes between current file and latest config stored
+    copy:
+      src: "{{ today_file }}"
+      dest: "{{ latest_config_file }}"
+    check_mode: yes
+    diff: yes
