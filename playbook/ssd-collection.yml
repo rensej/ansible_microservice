@@ -31,23 +31,3 @@
       src: "{{ ssd_name_line.stdout | first | regex_search('Warning: Changed output URL to file: (\\S+)','\\1') | first }}"
       dest: "{{ ssd_folder }}{{ ssd_name_line.stdout | first | regex_search('Warning: Changed output URL to file: (\\S+)','\\1') | first | basename}}"
 
-- hosts: CP
-  gather_facts: False
-  vars:
-    ssd_folder: /collector/SSDs/
-  tasks:
-  - name: Create SSD
-    register: ssd_name_line
-    cisco.ios.ios_command:
-      commands:  show support details to file /sftp/{{ inventory_hostname }}-{{ hostvars['control']['current_date'] }} compress | grep URL
-
-  - debug:
-      msg: "{{ ssd_name_line.stdout | first | regex_search('Warning: Changed output URL to file: (\\S+)','\\1') | first }}"
-  - debug:
-      msg: "{{ ssd_folder }}{{ ssd_name_line.stdout | first | regex_search('Warning: Changed output URL to file: (\\S+)','\\1') | first | basename}}"
-  - name: Copy files to destination
-    ansible.netcommon.net_get:
-      protocol: sftp
-      src: "{{ ssd_name_line.stdout | first | regex_search('Warning: Changed output URL to file: (\\S+)','\\1') | first }}"
-      dest: "{{ ssd_folder }}{{ ssd_name_line.stdout | first | regex_search('Warning: Changed output URL to file: (\\S+)','\\1') | first | basename}}"
-
