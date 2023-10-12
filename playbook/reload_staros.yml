@@ -1,7 +1,7 @@
 # Host command Validations
 # Executes commands stored in file and stores the result on an output File
 
-- hosts: UPF
+- hosts: UP
   gather_facts: False
   tasks:
 
