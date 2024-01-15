@@ -1,0 +1,6 @@
+services:
+  ansible:
+    tty: true
+    build: .
+    volumes:
+      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Docker\ansible_microservice\playbook:/binded
