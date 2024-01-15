@@ -1,9 +1,12 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
-#install ansible
+# setup to avoid manual setup for TZ during packages installation
+ENV DEBIAN_FRONTEND noninteractive
+
+# install ansible
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common && add-apt-repository --yes --update ppa:ansible/ansible && apt install -y ansible vim git
 
-#install docker module
+# install docker module
 RUN ansible-galaxy collection install community.docker
  
 # ansible output defaults
