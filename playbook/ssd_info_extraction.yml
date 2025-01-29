@@ -1,0 +1,64 @@
+# Extracts text file from SSDs tar file and then extracts the specified text section to an output file
+#pass the command variable via -e cli option
+# Ex: ansible-playbook [playbook-name].yml -e "command='show version verbose'"
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    ssd_folder: "/binded/SSDs"
+    output_file_name: "/binded/output/{{ command | replace(' ','_') }}.txt"
+
+  tasks:
+
+  - name: Searching for SSDs files
+    ansible.builtin.find:
+      paths: "{{ ssd_folder }}"
+      patterns: "^.*?\\.tar\\.gz$"
+      use_regex: yes
+    register: ssds
+
+  - name: Extracting support_sumary file from tar.gz file
+    vars:
+      ssd: "{{ item.path.split('.') | first | basename }}"
+    ansible.builtin.shell: "tar -zxf {{ ssd }}\\.tar\\.gz --transform='flags=r;s|support_summary|{{ ssd }}|' support_summary"
+    args:
+      chdir: "{{ ssd_folder }}"
+    loop: "{{ ssds.files }}"
+
+  - name: Getting output for {{ command }}
+    vars:
+      ssd: "{{ item.path.split('.') | first | basename }}"
+    #ansible.builtin.command: "sed -n '/\\*\\*\\*\\*\\*\\*\\*\\* {{ command }} \\*\\*\\*\\*\\*\\*\\*/,/^$/ { /^$/!p; /^$/q }' {{ ssd }}"
+    ansible.builtin.command: "sed -n '/\\*\\*\\*\\*\\*\\*\\*\\* {{ command }} \\*\\*\\*\\*\\*\\*\\*/,/\\*\\*\\*\\*\\*\\*\\*\\* show/ {/** show/!p}' {{ ssd }}"
+    args:
+      chdir: "{{ ssd_folder }}"
+    loop: "{{ ssds.files }}"
+    register: out
+
+  - name: Matches for searched pattern
+    debug: 
+      msg: "{{ item.cmd | last }}\n\n{{ item.stdout }}\n\n"
+    loop: "{{ out.results }}"
+
+  - name: "Create Output_File for command output in: {{ output_file_name }}"
+    copy:
+      dest: "{{ output_file_name }}"
+      content: ""
+      mode: "u+rw"
+      force: yes
+
+  - name: "Adding outputs to Output_File"
+    lineinfile:
+      line: "------ {{ item.cmd | last }}------\n{{ item.stdout }}\n\n"
+      path: "{{ output_file_name }}"
+      insertafter: EOF
+    loop: "{{ out.results }}"
+
+  - name: Deletting support_summary uncompressed file
+    vars:
+      ssd: "{{ item.path.split('.') | first | basename }}"
+    ansible.builtin.file:
+      state: absent
+      path: "{{ ssd_folder }}/{{ ssd }}"
+    loop: "{{ ssds.files }}"
+
