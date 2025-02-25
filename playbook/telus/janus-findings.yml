@@ -1,0 +1,42 @@
+# 
+- hosts: 127.0.0.1
+  connection: local
+  gather_facts: False
+  vars:
+    janus_issues_url: http://telusepcpoc.cisco.com:8084/issues
+    issues_file_path: ./issues.html
+  tasks:
+  - name: Get Issues Table from Janus Control Page
+    ansible.builtin.uri:
+      url:  "{{ janus_issues_url }}"
+      return_content: true
+      dest: "{{ issues_file_path }}"
+    register: issues_table
+
+  
+  - name: Parsing HTML code
+    ansible.builtin.shell:
+      cmd: "egrep 'td' {{ issues_file_path }} | egrep '\\-|href' | egrep -v 'Details|2025|N/A' | sed 's/<td>//g' | sed 's/<\\/td>//g'"
+    register: issues
+
+  - name: Split Hostname and Issue lists
+    set_fact:
+      hostnames: "{{ issues.stdout_lines[::2] }}"
+      host_issues: "{{ issues.stdout_lines[1::2] }}"
+      unique_issues: "{{ issues.stdout_lines[1::2] | unique }}"
+
+  - ansible.builtin.shell:
+      cmd: " echo '{{ item[1].split('>')[1].split('<')[0] }} - {{ item[0] | trim }}'"
+    loop: "{{ hostnames | zip(host_issues) | list}}"
+    register: issues_host
+
+  - set_fact:
+      issues_host_map: []
+  - set_fact:
+      issues_host_map: "{{ issues_host_map + [item.stdout]}}"
+    loop: "{{ issues_host.results }}"
+      
+  - debug:
+      msg: "{{ issues_host_map | sort | unique }}"
+
+

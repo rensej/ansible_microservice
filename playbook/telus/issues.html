@@ -1,0 +1,4053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Extra custom css -->
+    <link rel="stylesheet" href="/static/css/janus_extra.css">
+
+    <!-- Bootstrap3 and jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Angular -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+
+    <!-- NG Table -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.min.js"></script>
+
+    <!-- Data Tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/janus.png">
+    <title>Janus Control Page</title>
+
+	<!-- Janus Module App -->
+  	<script src="/static/js/app.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#"><b>Telus Canada</b>: Janus Control Page</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li><a href="/health_dashboard">Health Dashboard</a></li>
+		  <li><a href="/statistics/">Statistics</a></li>
+		  <li><a href="/issue_rules">Issue Rules</a></li>
+		  <li><a href="/devices">Devices</a></li>
+		  <li><a href="/issues?hoursago=168">Issues</a></li>
+		  <li><a href="/cases/">Cases</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><img src="/static/img/Cisco_Logo_no_TM_Indigo_Blue-RGB_43px.png" class="img-responsive" style="width:75%; height:75%" alt="Cisco Logo"></a></li>
+		</ul>
+	  </div>
+	</nav>
+    <!-- fluid or container class should be in content block <div class="container"> -->
+	
+
+<div class="container-fluid">
+  <h2>Issues</h2>
+  <table id="data" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Issue Name / Issue Rule</th>
+          <th>Incident Date</th>
+          <th>Janus Insertion Date</th>
+          <th>CSOne Case</th>
+          <th>Rule Outcome</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Device</th>
+          <th>Issue Name / Issue Rule</th>
+          <th>Incident Date</th>
+          <th>Janus Insertion Date</th>
+          <th>CSOne Case</th>
+          <th>Rule Outcome</th>
+          <th>Details</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d483c9810001edda4e">DS_StarOS_CSCwm47392_Sessmgr_restarts_after_671a98835da306f4acd61b9a</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda4f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda50">DS_StarOS_CSCwm47392_Sessmgr_restarts_after_671a950c05e2790addf15abb</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda51">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda53">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda55">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda57">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda59">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>VANCBC-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 20:14:32</td>
+          <td>2025-02-17 16:37:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b365d583c9810001edda5b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:12:41</td>
+          <td>2025-02-17 16:38:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660683c98100014472d8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:12:41</td>
+          <td>2025-02-17 16:38:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660683c98100014472d9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:12:41</td>
+          <td>2025-02-17 16:38:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660683c98100014472da">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:12:41</td>
+          <td>2025-02-17 16:38:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660683c98100014472db">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:13:13</td>
+          <td>2025-02-17 16:38:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660b83c98100014472dc">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:13:13</td>
+          <td>2025-02-17 16:38:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660b83c98100014472dd">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:13:13</td>
+          <td>2025-02-17 16:38:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660b83c98100014472de">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:13:13</td>
+          <td>2025-02-17 16:38:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660b83c98100014472df">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-06</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 20:13:13</td>
+          <td>2025-02-17 16:38:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660b83c98100014472e1">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 20:13:13</td>
+          <td>2025-02-17 16:38:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3660b83c98100014472e2">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-05</td>
+          <td><a href="/type_rule/67b3661583c98100014472e3">DS_StarOS_CSCvg20133_Segmentation_fault_at</a></td>
+          <td>2025-02-04 20:13:00</td>
+          <td>2025-02-17 16:38:42</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3661583c98100014472e4">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:13:00</td>
+          <td>2025-02-17 16:38:42</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3661583c98100014472e5">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:13:00</td>
+          <td>2025-02-17 16:38:42</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3661583c98100014472e6">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:13:00</td>
+          <td>2025-02-17 16:38:42</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3661583c98100014472e7">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:13:00</td>
+          <td>2025-02-17 16:38:42</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3661583c98100014472e8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-05</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 20:13:00</td>
+          <td>2025-02-17 16:38:42</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3661583c98100014472e9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:12:14</td>
+          <td>2025-02-17 16:39:17</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472ea">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:12:14</td>
+          <td>2025-02-17 16:39:17</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472eb">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:12:14</td>
+          <td>2025-02-17 16:39:17</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472ec">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:12:14</td>
+          <td>2025-02-17 16:39:17</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472ed">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 20:12:14</td>
+          <td>2025-02-17 16:39:17</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472ee">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:11:51</td>
+          <td>2025-02-17 16:39:19</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472ef">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:11:51</td>
+          <td>2025-02-17 16:39:19</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472f0">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:11:51</td>
+          <td>2025-02-17 16:39:19</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472f1">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:11:51</td>
+          <td>2025-02-17 16:39:19</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472f2">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-08</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 20:11:51</td>
+          <td>2025-02-17 16:39:19</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3663883c98100014472f3">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:11:37</td>
+          <td>2025-02-17 16:39:34</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3664783c98100014472f4">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:11:37</td>
+          <td>2025-02-17 16:39:34</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3664783c98100014472f5">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:11:37</td>
+          <td>2025-02-17 16:39:34</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3664783c98100014472f6">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:11:37</td>
+          <td>2025-02-17 16:39:34</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3664783c98100014472f7">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-07</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 20:11:37</td>
+          <td>2025-02-17 16:39:34</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3664783c98100014472f8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 20:11:37</td>
+          <td>2025-02-17 16:39:34</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3664783c98100014472f9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:11:15</td>
+          <td>2025-02-17 16:40:04</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666583c98100014472fa">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:11:15</td>
+          <td>2025-02-17 16:40:04</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666583c98100014472fb">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:11:15</td>
+          <td>2025-02-17 16:40:04</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666583c98100014472fc">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:11:15</td>
+          <td>2025-02-17 16:40:04</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666583c98100014472fd">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-06</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 20:11:15</td>
+          <td>2025-02-17 16:40:04</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666583c98100014472fe">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-06</td>
+          <td><a href="/type_rule/67b3666583c98100014472ff">ASR5K_SERDES_Active_check</a></td>
+          <td>2025-02-04 20:11:15</td>
+          <td>2025-02-17 16:40:04</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666583c9810001447300">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 20:11:02</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447301">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 20:11:02</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447302">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 20:11:02</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447303">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 20:11:02</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447304">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-05</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 20:11:02</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447305">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 20:11:02</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447306">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>HLFXNSAL-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:58:58</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447307">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>HLFXNSAL-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:58:58</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447308">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>HLFXNSAL-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:58:58</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c9810001447309">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>HLFXNSAL-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 19:58:58</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c981000144730a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>HLFXNSAL-PSGW-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 19:58:58</td>
+          <td>2025-02-17 16:40:09</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3666a83c981000144730b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>EDTNABXM-PSGW-03</td>
+          <td><a href="/type_rule/67b3669383c981000144730c">DS_StarOS_CSCwb76901_We_are_not_628c8a8c32312c7cdcf97225</a></td>
+          <td>2025-02-04 19:57:34</td>
+          <td>2025-02-17 16:40:47</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669383c981000144730d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>EDTNABXM-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:57:34</td>
+          <td>2025-02-17 16:40:47</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669383c981000144730e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>EDTNABXM-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:57:34</td>
+          <td>2025-02-17 16:40:47</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669383c981000144730f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>EDTNABXM-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:57:34</td>
+          <td>2025-02-17 16:40:47</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669383c9810001447310">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>EDTNABXM-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 19:57:34</td>
+          <td>2025-02-17 16:40:47</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669383c9810001447311">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>EDTNABXM-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 19:57:34</td>
+          <td>2025-02-17 16:40:47</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669383c9810001447312">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-06</td>
+          <td><a href="/type_rule/67b3661583c98100014472e3">DS_StarOS_CSCvg20133_Segmentation_fault_at</a></td>
+          <td>2025-02-04 19:56:51</td>
+          <td>2025-02-17 16:40:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669883c9810001447313">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:56:51</td>
+          <td>2025-02-17 16:40:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669883c9810001447314">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:56:51</td>
+          <td>2025-02-17 16:40:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669883c9810001447315">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:56:51</td>
+          <td>2025-02-17 16:40:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669883c9810001447316">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 19:56:51</td>
+          <td>2025-02-17 16:40:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669883c9810001447317">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-06</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:56:51</td>
+          <td>2025-02-17 16:40:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669883c9810001447318">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b3661583c98100014472e3">DS_StarOS_CSCvg20133_Segmentation_fault_at</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c9810001447319">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c981000144731a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c981000144731b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c981000144731c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c981000144731d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c981000144731e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 19:56:38</td>
+          <td>2025-02-17 16:41:00</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3669d83c981000144731f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:55:37</td>
+          <td>2025-02-17 16:41:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c083c9810001447320">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:55:37</td>
+          <td>2025-02-17 16:41:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c083c9810001447321">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:55:37</td>
+          <td>2025-02-17 16:41:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c083c9810001447322">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 19:55:37</td>
+          <td>2025-02-17 16:41:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c083c9810001447323">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-04</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:55:37</td>
+          <td>2025-02-17 16:41:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c083c9810001447324">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-04</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 19:55:37</td>
+          <td>2025-02-17 16:41:31</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c083c9810001447325">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:55:25</td>
+          <td>2025-02-17 16:41:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c583c9810001447326">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:55:25</td>
+          <td>2025-02-17 16:41:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c583c9810001447327">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:55:25</td>
+          <td>2025-02-17 16:41:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c583c9810001447328">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda58">BORG_StarOS_ECS_config_check</a></td>
+          <td>2025-02-04 19:55:25</td>
+          <td>2025-02-17 16:41:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c583c9810001447329">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-PSGW-03</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:55:25</td>
+          <td>2025-02-17 16:41:36</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366c583c981000144732a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b3669383c981000144730c">DS_StarOS_CSCwb76901_We_are_not_628c8a8c32312c7cdcf97225</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c981000144732b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b3661583c98100014472e3">DS_StarOS_CSCvg20133_Segmentation_fault_at</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c981000144732c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c981000144732d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c981000144732e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c981000144732f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c9810001447330">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-08</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 19:54:05</td>
+          <td>2025-02-17 16:41:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366cf83c9810001447331">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:53:37</td>
+          <td>2025-02-17 16:42:23</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f283c9810001447332">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:53:37</td>
+          <td>2025-02-17 16:42:23</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f283c9810001447333">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-06</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:53:37</td>
+          <td>2025-02-17 16:42:23</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f283c9810001447334">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-06</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:53:37</td>
+          <td>2025-02-17 16:42:23</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f283c9810001447335">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b3661583c98100014472e3">DS_StarOS_CSCvg20133_Segmentation_fault_at</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c9810001447336">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b366f783c9810001447337">DS_StarOS_CSCwa52782_Node_reloaded_after_624c3dda70bad6e57d9b6b28</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c9810001447338">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b3669383c981000144730c">DS_StarOS_CSCwb76901_We_are_not_628c8a8c32312c7cdcf97225</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c9810001447339">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c981000144733a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c981000144733b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c981000144733c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c981000144733d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-07</td>
+          <td><a href="/type_rule/67b3666583c98100014472ff">ASR5K_SERDES_Active_check</a></td>
+          <td>2025-02-04 19:53:50</td>
+          <td>2025-02-17 16:42:26</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b366f783c981000144733e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-04 19:51:28</td>
+          <td>2025-02-17 16:42:45</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3670683c981000144733f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-04 19:51:28</td>
+          <td>2025-02-17 16:42:45</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3670683c9810001447340">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-04 19:51:28</td>
+          <td>2025-02-17 16:42:45</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3670683c9810001447341">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-05</td>
+          <td><a href="/type_rule/67b3660b83c98100014472e0">StarOS_ASR5500_LACP_timeout_mismatch</a></td>
+          <td>2025-02-04 19:51:28</td>
+          <td>2025-02-17 16:42:45</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3670683c9810001447342">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-PSGW-05</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-04 19:51:28</td>
+          <td>2025-02-17 16:42:45</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b3670683c9810001447343">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-18 15:02:35</td>
+          <td>2025-02-18 15:03:13</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a13283c9810001447344">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-18 15:02:35</td>
+          <td>2025-02-18 15:03:13</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a13283c9810001447345">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-18 15:02:35</td>
+          <td>2025-02-18 15:03:13</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a13283c9810001447346">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 15:42:39</td>
+          <td>2025-02-18 15:03:37</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a14b83c9810001447348">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 15:42:39</td>
+          <td>2025-02-18 15:03:37</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a14b83c981000144734a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 15:42:39</td>
+          <td>2025-02-18 15:03:37</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a14b83c981000144734b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 15:42:39</td>
+          <td>2025-02-18 15:03:37</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a14b83c981000144734c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 15:42:39</td>
+          <td>2025-02-18 15:03:37</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a14b83c981000144734d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 15:42:39</td>
+          <td>2025-02-18 15:03:37</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a14b83c981000144734e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-02-18 15:03:34</td>
+          <td>2025-02-18 15:04:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a17383c981000144734f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-18 15:03:34</td>
+          <td>2025-02-18 15:04:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a17383c9810001447350">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-18 15:03:34</td>
+          <td>2025-02-18 15:04:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a17383c9810001447351">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-18 15:03:34</td>
+          <td>2025-02-18 15:04:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a17383c9810001447352">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-18 15:03:34</td>
+          <td>2025-02-18 15:04:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a17383c9810001447353">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-02-18 15:04:18</td>
+          <td>2025-02-18 15:04:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a19683c9810001447354">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-18 15:04:18</td>
+          <td>2025-02-18 15:04:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a19683c9810001447355">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-18 15:04:18</td>
+          <td>2025-02-18 15:04:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a19683c9810001447356">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-18 15:04:18</td>
+          <td>2025-02-18 15:04:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a19683c9810001447357">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-18 15:04:18</td>
+          <td>2025-02-18 15:04:50</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a19683c9810001447358">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c9810001447359">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c981000144735a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c981000144735b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c981000144735c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c981000144735d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c981000144735f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 09:05:43</td>
+          <td>2025-02-18 15:05:01</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1a083c9810001447360">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-02-18 15:04:41</td>
+          <td>2025-02-18 15:05:24</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1b483c9810001447361">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-18 15:04:41</td>
+          <td>2025-02-18 15:05:24</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1b483c9810001447362">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-18 15:04:41</td>
+          <td>2025-02-18 15:05:24</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1b483c9810001447363">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-18 15:04:41</td>
+          <td>2025-02-18 15:05:24</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1b483c9810001447364">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-18 15:04:41</td>
+          <td>2025-02-18 15:05:24</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1b483c9810001447365">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c9810001447366">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c9810001447367">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c9810001447368">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c9810001447369">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c981000144736a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c981000144736b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 08:06:09</td>
+          <td>2025-02-18 15:05:46</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1cd83c981000144736c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c981000144736d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c981000144736e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c981000144736f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c9810001447370">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c9810001447371">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c9810001447372">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 15:43:09</td>
+          <td>2025-02-18 15:05:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1d283c9810001447373">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c9810001447374">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c9810001447375">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c9810001447376">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c9810001447377">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c9810001447378">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c9810001447379">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 14:44:13</td>
+          <td>2025-02-18 15:06:05</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1e183c981000144737a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c981000144737b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c981000144737c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c981000144737d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c981000144737e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c981000144737f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c9810001447380">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>BCGLMR-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 14:44:58</td>
+          <td>2025-02-18 15:06:35</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a1ff83c9810001447381">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 09:05:25</td>
+          <td>2025-02-18 15:06:52</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a20e83c9810001447382">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 09:05:25</td>
+          <td>2025-02-18 15:06:52</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a20e83c9810001447383">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 09:05:25</td>
+          <td>2025-02-18 15:06:52</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a20e83c9810001447384">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 09:05:25</td>
+          <td>2025-02-18 15:06:52</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a20e83c9810001447385">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 09:05:25</td>
+          <td>2025-02-18 15:06:52</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a20e83c9810001447386">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ABBRLW-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 09:05:25</td>
+          <td>2025-02-18 15:06:52</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a20e83c9810001447387">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-18 15:07:40</td>
+          <td>2025-02-18 15:08:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26483c9810001447388">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-18 15:07:40</td>
+          <td>2025-02-18 15:08:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26483c9810001447389">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-18 15:07:40</td>
+          <td>2025-02-18 15:08:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26483c981000144738a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-02-18 15:07:40</td>
+          <td>2025-02-18 15:08:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26483c981000144738b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-18 15:07:40</td>
+          <td>2025-02-18 15:08:18</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26483c981000144738c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c981000144738d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c981000144738e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c981000144738f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c9810001447390">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c9810001447391">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c9810001447392">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 11:08:11</td>
+          <td>2025-02-18 15:08:29</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a26e83c9810001447393">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-02-18 15:07:57</td>
+          <td>2025-02-18 15:08:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a28283c9810001447394">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-02-18 15:07:57</td>
+          <td>2025-02-18 15:08:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a28283c9810001447395">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-02-18 15:07:57</td>
+          <td>2025-02-18 15:08:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a28283c9810001447396">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-02-18 15:07:57</td>
+          <td>2025-02-18 15:08:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a28283c9810001447397">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-02-18 15:07:57</td>
+          <td>2025-02-18 15:08:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a28283c9810001447398">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-02-18 15:07:57</td>
+          <td>2025-02-18 15:08:49</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a28283c9810001447399">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c981000144739a">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c981000144739b">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c981000144739c">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c981000144739d">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c981000144739e">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c981000144739f">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 17:59:28</td>
+          <td>2025-02-18 15:09:06</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a29683c98100014473a0">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 11:07:50</td>
+          <td>2025-02-18 15:09:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2af83c98100014473a1">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 11:07:50</td>
+          <td>2025-02-18 15:09:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2af83c98100014473a2">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 11:07:50</td>
+          <td>2025-02-18 15:09:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2af83c98100014473a3">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 11:07:50</td>
+          <td>2025-02-18 15:09:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2af83c98100014473a4">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 11:07:50</td>
+          <td>2025-02-18 15:09:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2af83c98100014473a5">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 11:07:50</td>
+          <td>2025-02-18 15:09:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2af83c98100014473a6">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473a7">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473a8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473a9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473aa">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473ab">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473ac">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 18:00:05</td>
+          <td>2025-02-18 15:09:55</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2c383c98100014473ad">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473ae">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473af">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473b0">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473b1">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473b2">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473b3">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 11:07:35</td>
+          <td>2025-02-18 15:10:30</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2e683c98100014473b4">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473b5">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473b6">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473b7">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473b8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473b9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473ba">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 18:01:05</td>
+          <td>2025-02-18 15:10:44</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a2f583c98100014473bb">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473bc">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473bd">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473be">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473bf">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c0">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c1">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 11:07:16</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c2">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:32</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c3">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:33</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c4">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:33</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c5">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:33</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c6">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:33</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c7">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:33</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>ONHOOD-MMESGS-01</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 18:01:36</td>
+          <td>2025-02-18 15:11:33</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a32783c98100014473c9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473ca">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473cb">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473cc">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473cd">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473ce">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473cf">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d0">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b3666583c98100014472ff">ASR5K_SERDES_Active_check</a></td>
+          <td>2025-01-21 11:09:20</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d1">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d2">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d3">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d4">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d5">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d6">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d7">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d8">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-03</td>
+          <td><a href="/type_rule/67b3666583c98100014472ff">ASR5K_SERDES_Active_check</a></td>
+          <td>2025-01-20 17:58:17</td>
+          <td>2025-02-18 15:13:15</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a38c83c98100014473d9">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447347">DS_StarOS_CSCwk57922_Abrupt_increase_observed_66830018743ed4e994e42835</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473da">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a14b83c9810001447349">DS_StarOS_CSCwj19764_CONNECTEDAPPS_ERROR_sys_get_rdomain_66449088d8dd07e94972e16d</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473db">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda52">DS_StarOS_CSCwk63293_Nessus_scan_High-_66955151048d3438e70d12bd</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473dc">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda54">DS_StarOS_CSCwk62248_Evaluation_of_staros_6686bdf4d4416c4b1ac917d2</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473dd">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda56">DS_StarOS_CSCwk70831_Evaluation_of_staros_66968471123a9625e76abc51</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473de">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b4a1a083c981000144735e">StarOS_MME_duplicate_eNodeB_paths</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473df">Details</a></td>
+        </tr>
+        
+        <tr>
+          <td>PQPTFD-MMESGS-02</td>
+          <td><a href="/type_rule/67b365d583c9810001edda5a">StarOS_TCP_Socket_Down</a></td>
+          <td>2025-01-21 11:08:41</td>
+          <td>2025-02-18 15:14:03</td>
+          <td><a href="http://mwz.cisco.com/N/A">N/A</a></td>
+          <td>
+              
+              <span class="label label-info">Requires Investigation</span>
+              <span class="label label-warn">No rules set</span>
+              
+          </td>
+          <td><a href="/issue/67b4a3be83c98100014473e0">Details</a></td>
+        </tr>
+        
+      </tbody>
+  </table>
+</div>
+<script type="text/javascript" language="javascript" src="/static/js/tables.js"></script>
+
+
+    <!-- </div> -->
+</body>
+
+</html>
