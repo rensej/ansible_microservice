@@ -1,0 +1,19 @@
+# Validate base infra configs for lab VMs
+
+- hosts: MATRIX
+  gather_facts: False
+  vars:
+    #output_path: 
+    output_file_name: "{{ hostvars['control']['output_dir'] }}{{ inventory_hostname | replace(' ','_') }}.txt"
+    val_commands:
+      - nmcli con show mgmt0 | grep "connection.autoconnect:"
+  tasks:
+
+  - name: Run Commands 
+    ansible.builtin.shell: "{{ item }}"
+    with_items: "{{ val_commands }}"
+    register: validations
+
+  - name: Print Commands output
+    debug:
+      msg: "{{ validations.results[0].stdout }}"

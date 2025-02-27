@@ -1,0 +1,67 @@
+# Validate base infra configs for lab VMs
+- hosts: local
+  gather_facts: False
+  tasks:
+  - name: Get localdate
+    register: localdate
+    shell: date +%Y%m%d
+
+  - set_fact: 
+      current_date: "{{ localdate.stdout }}"
+      output_path: "/binded/output/"
+
+  - set_fact: 
+      output_dir: "{{ output_path }}/{{ current_date }}/"
+
+  - name: Create output directory
+    file:
+      path: "{{ output_dir }}"
+      state: directory
+
+- hosts: all:!local
+  gather_facts: False
+  vars:
+    #output_path: 
+    output_file_name: "{{ hostvars['control']['output_dir'] }}{{ inventory_hostname | replace(' ','_') }}.txt"
+    val_commands:
+      - hostnamectl
+      - ip address
+      - ip route
+      - for i in `nmcli con show | awk '{print $1}' | egrep "mgmt|data"`; do nmcli con show $i | egrep "ipv4|DEVI";done
+
+  tasks:
+
+  - name: Run Commands 
+    ansible.builtin.shell: "{{ item }}"
+    with_items: "{{ val_commands }}"
+    register: validations
+
+  - name: "Create Output_File for command output in: {{ output_file_name }}"
+    local_action:
+      module: "copy"
+      dest: "{{ output_file_name }}"
+      content: ""
+      mode: "u+rw"
+      force: yes
+
+  - name: Add outputs to file
+    local_action:
+      module: "lineinfile"
+      path: "{{ output_file_name }}"
+      line: "----- {{ item.cmd }} ----- \n\n{{ item.stdout | replace('\\n', '\n') }}\n\n"
+      insertafter: EOF
+    loop: "{{ validations.results }}"
+
+- hosts: local
+  gather_facts: False
+  tasks:
+  - name: Create tgz for backup files
+    shell:
+      cmd: "tar --files-from /dev/null -czf {{ hostvars['control']['output_path'] }}/lab-VMs-backup-{{ hostvars['control']['current_date'] }}.tgz {{ hostvars['control']['output_dir'] }}"
+
+
+  - name: Remove uncompressed directory
+    file:
+      path: "{{ hostvars['control']['output_dir'] }}"
+      state: absent
+  
