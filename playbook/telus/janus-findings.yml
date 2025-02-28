@@ -11,13 +11,17 @@
       url:  "{{ janus_issues_url }}"
       return_content: true
       dest: "{{ issues_file_path }}"
-    register: issues_table
 
   
   - name: Parsing HTML code
     ansible.builtin.shell:
       cmd: "egrep 'td' {{ issues_file_path }} | egrep '\\-|href' | egrep -v 'Details|2025|N/A' | sed 's/<td>//g' | sed 's/<\\/td>//g'"
     register: issues
+
+  - name: delete issues_file_path
+    ansible.builtin.file:
+      state: absent
+      path: "{{ issues_file_path }}"
 
   - name: Split Hostname and Issue lists
     set_fact:
@@ -36,7 +40,8 @@
       issues_host_map: "{{ issues_host_map + [item.stdout]}}"
     loop: "{{ issues_host.results }}"
       
-  - debug:
+  - name: Formated output unique
+    debug:
       msg: "{{ issues_host_map | sort | unique }}"
 
 
