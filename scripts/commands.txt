@@ -1,0 +1,3 @@
+show license information
+show version
+show clock
