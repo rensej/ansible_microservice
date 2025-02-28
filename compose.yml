@@ -5,4 +5,4 @@ services:
     build: .
     working_dir: /binded
     volumes:
-      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Docker\ansible_microservice\playbook:/binded
+      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Docker\ansible_microservice:/binded
