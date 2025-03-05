@@ -1,0 +1,38 @@
+# Validate base infra configs for lab VMs
+
+- hosts: test-vm-1
+  gather_facts: False
+  become: true
+
+  tasks:
+
+    - name: Gather facts about the host
+      setup:
+
+    - name: Ensure system is RHEL 9
+      assert:
+        that:
+          - ansible_distribution == "RedHat"
+          - ansible_distribution_major_version | int == 9
+      vars:
+        ansible_distribution: "{{ ansible_facts['os_family'] }}"
+        ansible_distribution_major_version: "{{ ansible_facts['distribution_major_version'] }}"
+
+    - name: Ensure 'use_devicesfile' is set to '0' in /etc/lvm/lvm.conf
+      replace:
+        path: /etc/lvm/lvm.conf
+        regexp: '^use_devicesfile\s*=\s*.*$'
+        replace: 'use_devicesfile = 0'
+      register: replace_result
+      when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "9"
+
+    - name: Add 'use_devicesfile = 0' if 'use_devicesfile' is not present
+      lineinfile:
+        path: /etc/lvm/lvm.conf
+        line: 'use_devicesfile = 0'
+      when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "9"
+        - replace_result is changed == false
