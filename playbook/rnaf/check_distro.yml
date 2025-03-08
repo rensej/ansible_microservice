@@ -1,0 +1,17 @@
+# Validate base infra configs for lab VMs
+
+- hosts: test-vm-1:WAE
+  become: true
+  gather_facts: yes
+
+  tasks:
+
+    - name: Distro Details
+      debug:
+        msg: |
+         OS_FAMILY: {{ ansible_facts['os_family']}} 
+         DISTRIBUTION: {{ ansible_facts['distribution']}} 
+         DISTRIBUTION_VERSION: {{ ansible_facts['distribution_version']}} 
+         DISTRIBUTION_FILE_VARIETY: {{ ansible_facts['distribution_file_variety']}} 
+         KERNEL: {{ ansible_facts['kernel']}}
+         
