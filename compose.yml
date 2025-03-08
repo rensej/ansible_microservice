@@ -2,7 +2,10 @@ services:
   ansible:
     container_name: ansible
     tty: true
-    build: .
+    image: custom_ansible:1.0
+    build: 
+      context: ./
+      dockerfile: ./AnsibleDockerfile
     working_dir: /binded
     volumes:
-      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Docker\ansible_microservice:/binded
+      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Ansible\ansible_microservice:/binded
