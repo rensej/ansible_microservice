@@ -6,6 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # install ansible
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common && add-apt-repository --yes --update ppa:ansible/ansible && apt install -y ansible vim git iputils-ping wget
 
+# To compatibility with RHEL8 Python
+RUN apt install python3-pip && pip install --force-reinstall -I ansible-core==2.15.8
+
 # install docker module
 RUN ansible-galaxy collection install community.docker
  
