@@ -2,6 +2,8 @@ import re
 #from pprint import pprint
 import os
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 class LogParser:
     log_line = ""
@@ -88,7 +90,7 @@ class FileParser:
     def __init__(self, input_log_file_path):
         self.input_log_file_path = input_log_file_path
     
-    def parseFile(self):
+    def parse_file(self):
         print("Parsing file: "+self.input_log_file_path)
         try:
             with open(self.input_log_file_path, 'r') as file:
@@ -185,11 +187,18 @@ class FileParser:
             json.dump(log_statistics, json_file, indent=4)
 
 
+    def multi_thread_processing(folder_path):
 
-folder_path = "/binded/Syslog/"
-total_dict = {}
-for file in os.listdir(folder_path):
-    file_parser = FileParser(os.path.join(folder_path, file))
-    file_parser.parseFile()
-    file_parser.consolidation_json_dump()
+        def process_file(log_file):
+            file_parser = FileParser(os.path.join(folder_path, log_file))
+            file_parser.parse_file()
+            file_parser.consolidation_json_dump()
+        
+        # Multithreading with ThreadPoolExecutor
+        with ThreadPoolExecutor() as executor:
+            file_list = os.listdir(folder_path)
+            executor.map(process_file, file_list)
 
+
+
+FileParser.multi_thread_processing("/binded/Syslog/")
