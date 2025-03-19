@@ -1,0 +1,16 @@
+# Regis
+- hosts: test
+  gather_facts: false
+  become: true
+
+  tasks:
+
+    - name: Registering The VM Using Subscription Module
+      community.general.redhat_subscription:
+        username: "{{ rhel_subs_user }}"
+        password: "{{ rhel_subs_passwd }}"
+        server_proxy_hostname: "rncc-proxy-01-south.cc.vf.rogers.com"
+        server_proxy_port: 80
+        server_proxy_scheme: "http"
+        state: present
+        auto_attach: true

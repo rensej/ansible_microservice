@@ -1,0 +1,32 @@
+# Adds SSH Banner Config
+- hosts: test
+  gather_facts: true
+  become: true
+  vars:
+    ssh_banner: |
+      ------------------------------------------------------------------------------
+      * WARNING                                                                    *
+      *                                                                            *
+      * By using this system, you agree to comply with RCI corporate policies      *
+      * governing accessing and using the company’s Network systems and data.      *
+      *                                                                            *
+      * To protect this system from unauthorized use and to ensure that the system *
+      * is functioning properly, activities on this system are monitored and       *
+      * recorded and are subject to audit.                                         *
+      *                                                                            *
+      * Unauthorized access or use of this system is prohibited and could be       *
+      * subject to disciplinary actions as well criminal and/or civil penalties.   *
+      *                                                                            *
+      * Disconnect immediately if you are not an authorized user of this system.   *
+      *                                                                            *
+      ------------------------------------------------------------------------------
+  tasks:
+    - name: Add content to /etc/issue
+      ansible.builtin.copy:
+        dest: "/etc/issue"
+        content: "{{ ssh_banner }}"
+
+    - name: Add content to /etc/issue.net
+      ansible.builtin.copy:
+        dest: "/etc/issue.net"
+        content: "{{ ssh_banner }}"

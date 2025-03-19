@@ -1,0 +1,20 @@
+# Adds HTTP Proxy for RHEL register and dnf 
+- hosts: test
+  gather_facts: true
+  become: true
+  vars:
+    http_proxy: "http_proxy=http://rncc-proxy-01-south.cc.vf.rogers.com:80"
+    https_proxy: "https_proxy=https://rncc-proxy-01-south.cc.vf.rogers.com:80"
+
+  tasks:
+    - name: Add proxies on /etc/environment
+      ansible.builtin.copy:
+        dest: "/etc/environment"
+        content: "{{ http_proxy }}\n{{ https_proxy }}\n"
+
+    - name: Add proxie for dnf registry access
+      ansible.builtin.lineinfile:
+        path: "/etc/dnf/dnf.conf"
+        line: "{{ http_proxy }}"
+        create: yes
+        insertafter: EOF

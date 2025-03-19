@@ -1,0 +1,37 @@
+# Validate base infra configs for lab VMs
+
+- hosts: auto-test-vm-1
+  gather_facts: true
+  become: true
+
+  tasks:
+
+    - name: Add SSH Banners
+      command: 
+
+    - name: Ensure 'use_devicesfile' is set to '0' in /etc/lvm/lvm.conf
+      replace:
+        path: /etc/lvm/lvm.conf
+        regexp: '^use_devicesfile\s*=\s*.*$'
+        replace: 'use_devicesfile = 0'
+      register: replace_result
+      when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "9"
+
+    - name: Add 'use_devicesfile = 0' if 'use_devicesfile' is not present
+      lineinfile:
+        path: /etc/lvm/lvm.conf
+        line: 'use_devicesfile = 0'
+      when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "9"
+        - replace_result is changed == false
+
+    - name: Delete devices file if present
+      file:
+        path: /etc/lvm/devices/system.devices
+        state: absent
+      when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "9"

@@ -1,0 +1,21 @@
+# Adds User Groups to system 
+- hosts: test
+  gather_facts: false
+  become: true
+  vars:
+    user_groups: 
+      - { name: "cisco", gid: 1001 }
+      - { name: "rogers", gid: 1002 }
+
+  tasks:
+
+    - name: Add user groups 'cisco' and 'rogers'
+      ansible.builtin.group:
+        name: "{{ item.name }}"
+        state: present
+        gid: "{{ item.gid }}"
+      with_items: "{{ user_groups }}"
+
+    - name: Set System Hostname 
+      hostname:
+        name: "{{ inventory_hostname }}"
