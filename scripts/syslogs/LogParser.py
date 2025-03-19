@@ -1,6 +1,7 @@
 import re
-from pprint import pprint
+#from pprint import pprint
 import os
+import json
 
 class LogParser:
     log_line = ""
@@ -70,7 +71,8 @@ class FileParser:
                              "rmmgr_collect_fdstats_coproc_done", "SGTPCMgr-3 detected path failure for","Session Setup Timer","Session start/disconnect Timer"]
     
     parsed_logs = []
-    file_path = ""
+    input_log_file_path = ""
+    output_folder_path = "/binded/output/log_consolidation"
     """
     A class representing a single log with related parsing methods.
 
@@ -79,12 +81,17 @@ class FileParser:
         pased_data (dict): Dictionaty containing each lined content parsed.
     """
 
-    def __init__(self, file_path):
-        self.file_path = file_path
+    def __init__(self, input_log_file_path, output_folder_path):
+        self.input_log_file_path = input_log_file_path
+        self.output_folder_path = output_folder_path
+
+    def __init__(self, input_log_file_path):
+        self.input_log_file_path = input_log_file_path
     
     def parseFile(self):
+        print("Parsing file: "+self.input_log_file_path)
         try:
-            with open(self.file_path, 'r') as file:
+            with open(self.input_log_file_path, 'r') as file:
                 for line in file:
                     #validating diffent line types in file for correct split
                     try:
@@ -99,9 +106,10 @@ class FileParser:
                     except IndexError:
                         print("Line OOF: \n" + line)
         except FileNotFoundError:
-            print("The file at {file_path} does not exist.")
+            print("The file at {input_log_file_path} does not exist.")
         except IOError:
-            print("An error occurred while trying to read the file at {file_path}.")
+            print("An error occurred while trying to read the file at {input_log_file_path}.")
+        print("File parsing complete.")
     
     def uniqueParsedLogs(self):
         """
@@ -113,8 +121,6 @@ class FileParser:
         unique_log = []
         for log_group in self.log_group_for_summary:
             unique_log.append(log_group)
-        print('Initial unique_log list:')
-        print(unique_log)
         for log in self.parsed_logs:
             is_grouped_log = False
             for log_group in self.log_group_for_summary:
@@ -133,10 +139,11 @@ class FileParser:
             dict: containing mapping between each log message and number of times shows up in the file.
         """
         # Initialize log_statistics dictionary
+        print("starting log_message_count")
         log_statistics = {}
         unique_log = self.uniqueParsedLogs()
         for log_message in unique_log:
-            log_statistics.update({ log_message : 0 })
+            log_statistics.update({ log_message.replace("\"",'') : 0 })
 
         for log in self.parsed_logs:
             is_grouped_log = False
@@ -146,8 +153,10 @@ class FileParser:
                     is_grouped_log = True
                     break
             if not is_grouped_log:
-                log_statistics[log["eventmessage"]] += 1
+                log_statistics[log["eventmessage"].replace("\"",'')] += 1
+        print("Message count completed.")
         return log_statistics
+
     
     def logs_consolidation(log_dict1, log_dict2):
         """
@@ -163,6 +172,17 @@ class FileParser:
             except KeyError:
                 log_dict1.update({dict2_keys : log_dict2[dict2_keys]})
         return log_dict1
+    
+    def consolidation_json_dump(self):
+        """
+        Generates Summary dictionary containing number of log group repetition in file
+         from log parsing dict and dumps the result in json format on output_file_path
+
+        """
+        log_statistics = self.log_message_count()
+        print("output_file_path: "+os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.json")
+        with open(os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.json", 'w') as json_file:
+            json.dump(log_statistics, json_file, indent=4)
 
 
 
@@ -171,12 +191,5 @@ total_dict = {}
 for file in os.listdir(folder_path):
     file_parser = FileParser(os.path.join(folder_path, file))
     file_parser.parseFile()
-    file_log_count = file_parser.log_message_count()
-    #pprint(file_parser.log_message_count())
-    if len(total_dict) > 0:
-        total_dict = file_log_count
-    else:
-        total_dict = FileParser.logs_consolidation(total_dict, file_log_count)
-
-pprint(total_dict)
+    file_parser.consolidation_json_dump()
 
