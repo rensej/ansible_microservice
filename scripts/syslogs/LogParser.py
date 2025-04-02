@@ -4,6 +4,7 @@ import os
 import json
 import threading
 from concurrent.futures import ThreadPoolExecutor
+import pandas
 
 class LogParser:
     log_line = ""
@@ -26,8 +27,8 @@ class LogParser:
             none.
         """
         log_patterns = [
-            r"^(?P<timestamp>[A-Za-z]{3} \d{2} \d{2}:\d{2}:\d{2}) (?P<hostname>\S+) (?P<process>\S+) (?P<dc>\S+) (?P<errortype>\S+ \d+ \S+) (?P<processdetail>\S+ \S+ \S+) (?P<contextdetail>\S+ \S+ \S+ \S+) (?P<eventdesc>[\s\S]*\]) (?P<eventmessage>[\s\S]*)\"$",
-            r"^(?P<timestamp>[A-Za-z]{3} \d{2} \d{2}:\d{2}:\d{2}) (?P<hostname>\S+) (?P<process>\S+) (?P<dc>\S+) (?P<errortype>\S+ \d+ \S+) (?P<processdetail>\S+ \S+ \S+) (?P<eventdesc>\[[\s\S]*\]) (?P<eventmessage>[\s\S]*\")",
+            r"^(?P<timestamp>[A-Za-z]{3} \d{2} \d{2}:\d{2}:\d{2}) (?P<hostname>\S+) (?P<process>\S+) (?P<dc>\S+) (?P<errortype>\S+ \d+ \S+) (?P<processdetail>\S+ \S+ \S+) (?P<contextdetail>\S+ \S+ \S+ \S+) (?P<eventdesc>[\s\S]*\]) (?P<eventmessage>[\s\S]*)$",
+            r"^(?P<timestamp>[A-Za-z]{3} \d{2} \d{2}:\d{2}:\d{2}) (?P<hostname>\S+) (?P<process>\S+) (?P<dc>\S+) (?P<errortype>\S+ \d+ \S+) (?P<processdetail>\S+ \S+ \S+) (?P<eventdesc>\[[\s\S]*\]) (?P<eventmessage>[\s\S]*)",
             r"^(?P<timestamp>[A-Za-z]{3} \d{2} \d{2}:\d{2}:\d{2}) (?P<hostname>\S+) (?P<process>\S+) (?P<dc>\S+) (?P<errortype>\S+ \d+ \S+) (?P<processdetail>\S+ \S+ \S+) (?P<callid>\S+ \S+) \[Call Trace\] (?P<contextdetail>\S+ \S+ \S+ \S+)  (?P<eventdesc>[\s\S]*\]) (?P<eventmessage>[\s\S]*)"
 
         ]
@@ -42,7 +43,7 @@ class LogParser:
                 break
         
         if not matched_log:
-            print("Not Supported Log:\n" + self.log_line)
+            print("\nNot Supported Log:\n" + self.log_line)
                 
     
     def getParsedData(self):
@@ -74,7 +75,7 @@ class FileParser:
     
     parsed_logs = []
     input_log_file_path = ""
-    output_folder_path = "/binded/output/log_consolidation"
+    output_folder_path = "/home/output/log_consolidation"
     """
     A class representing a single log with related parsing methods.
 
@@ -93,20 +94,17 @@ class FileParser:
     def parse_file(self):
         print("Parsing file: "+self.input_log_file_path)
         try:
-            with open(self.input_log_file_path, 'r') as file:
-                for line in file:
-                    #validating diffent line types in file for correct split
-                    try:
-                        if(len(line) > 40):
-                            if(line.startswith(",\"")):
-                                parser = LogParser(line.split(",\"")[2].split("\",")[0])
-                            else:
-                                parser = LogParser(line.split(",\"")[1].split("\",")[0])
-                            parsed_log = parser.getParsedData()
-                            if len(parsed_log) > 0:
-                                self.parsed_logs.append(parsed_log)
-                    except IndexError:
-                        print("Line OOF: \n" + line)
+            log_raw = pandas.read_csv(self.input_log_file_path, usecols=["_raw"])
+            for line in log_raw["_raw"]:
+                #validating diffent line types in file for correct split
+                try:
+                    if(len(line) > 10):
+                        parser = LogParser(line)
+                        parsed_log = parser.getParsedData()
+                        if len(parsed_log) > 0:
+                            self.parsed_logs.append(parsed_log)
+                except IndexError:
+                    print("Line OOF: \n" + line)
         except FileNotFoundError:
             print("The file at {input_log_file_path} does not exist.")
         except IOError:
@@ -141,11 +139,11 @@ class FileParser:
             dict: containing mapping between each log message and number of times shows up in the file.
         """
         # Initialize log_statistics dictionary
-        print("starting log_message_count")
         log_statistics = {}
         unique_log = self.uniqueParsedLogs()
         for log_message in unique_log:
-            log_statistics.update({ log_message.replace("\"",'') : 0 })
+            if len(log_message.replace("\"",'')) > 1:
+                log_statistics.update({ log_message.replace("\"",'') : 0 })
 
         for log in self.parsed_logs:
             is_grouped_log = False
@@ -175,30 +173,55 @@ class FileParser:
                 log_dict1.update({dict2_keys : log_dict2[dict2_keys]})
         return log_dict1
     
-    def consolidation_json_dump(self):
+    def consolidation_csv_dump(self):
         """
         Generates Summary dictionary containing number of log group repetition in file
          from log parsing dict and dumps the result in json format on output_file_path
 
         """
         log_statistics = self.log_message_count()
-        print("output_file_path: "+os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.json")
-        with open(os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.json", 'w') as json_file:
-            json.dump(log_statistics, json_file, indent=4)
+        try:
+            df = pandas.DataFrame(FileParser.sort_consolidated_file(log_statistics), index=[0])
+            print("Dumping log consolidation into: " +os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.csv")
+            df.T.to_csv(os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.csv", index=True)
+        except FileNotFoundError as fnf_error:
+            print(f"Error: File not found - {fnf_error}")
+
+        except PermissionError as perm_error:
+            print(f"Error: Permission denied - {perm_error}")
+
+        except Exception as e:
+            # Catch any other unexpected exceptions
+            print(f"An unexpected error occurred: {e}")
+
+        
+        #with open(os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.json", 'w') as json_file:
+            # Stores in json format a sorted vertion of the consolidated summary file
+            #son.dump(FileParser.sort_consolidated_file(log_statistics), json_file, indent=4)
+            # dumping as a csv file
 
 
-    def multi_thread_processing(folder_path):
+    def multi_thread_processing(folder_path, workers_number):
+        """
+        Processes in multithreaded mode every log file
 
+        Attributes:
+            folder_path (str): output folder to store output files
+            workers_number (int): number of max active threads working in the pool
+        """
         def process_file(log_file):
             file_parser = FileParser(os.path.join(folder_path, log_file))
             file_parser.parse_file()
-            file_parser.consolidation_json_dump()
+            file_parser.consolidation_csv_dump()
         
         # Multithreading with ThreadPoolExecutor
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=workers_number) as executor:
             file_list = os.listdir(folder_path)
             executor.map(process_file, file_list)
+    
+
+    def sort_consolidated_file(unsorted_dict):
+        return dict(sorted(unsorted_dict.items(), key=lambda item: item[1], reverse=True))
 
 
-
-FileParser.multi_thread_processing("/binded/Syslog/")
+FileParser.multi_thread_processing("/home/Syslog/", 2)
