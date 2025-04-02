@@ -5,8 +5,8 @@
   connection: local
   gather_facts: False
   vars:
-    ssd_folder: "/binded/SSDs"
-    output_file_name: "/binded/output/{{ command | replace(' ','_') }}.txt"
+    ssd_folder: "/home/SSDs"
+    output_file_name: "/home/output/{{ command | replace(' ','_') }}.txt"
 
   tasks:
 
