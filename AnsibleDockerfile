@@ -4,10 +4,13 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND noninteractive
 
 # install ansible
-RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common && add-apt-repository --yes --update ppa:ansible/ansible && apt install -y ansible vim git iputils-ping wget
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common && add-apt-repository --yes --update ppa:ansible/ansible && apt install -y ansible vim git iputils-ping wget python3-pip
 
 # To compatibility with RHEL8 Python
-RUN apt install python3-pip && pip install --force-reinstall -I ansible-core==2.15.8
+#RUN apt install python3-pip && pip install --force-reinstall -I ansible-core==2.15.8
+
+# To run additional python scripts
+RUN pip install pandas
 
 # install docker module
 RUN ansible-galaxy collection install community.docker

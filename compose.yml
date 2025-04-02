@@ -6,6 +6,6 @@ services:
     build: 
       context: ./
       dockerfile: ./AnsibleDockerfile
-    working_dir: /binded
+    working_dir: /home
     volumes:
-      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Ansible\ansible_microservice:/binded
+      - C:\Users\jlugosal\OneDrive - Cisco\Scripts\Ansible\ansible_microservice:/home
