@@ -1,0 +1,12 @@
+- name: Upgrade kernel on RHEL instance
+  hosts: all
+  gather_facts: False
+  become: yes
+  tasks:
+  - name: Checking kernel version
+    command: "uname -r"
+    register: kernel_version
+
+  - name: Display kernel version
+    debug:
+      msg: "Kernel version is: {{ kernel_version.stdout }}"

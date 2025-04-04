@@ -1,0 +1,30 @@
+# Validate base infra configs for lab VMs
+
+- hosts: all:!control
+  gather_facts: False
+
+  tasks:
+
+# ping default GW
+  - name: Collect Default Gateway IP
+    ansible.builtin.shell: ip route | grep default | awk '{print $3}'
+    register: default_gw
+
+  - name: Ping Default Gateway
+    ansible.builtin.command: ping -c 3 -I {{ ansible_host }} {{ default_gw.stdout }}
+    register: dg_ping_result
+
+  - name: Default Gateway ping Results
+    debug:
+      msg: "{{ dg_ping_result.stdout }}"
+  
+# ping secondary ip if necessary
+  - name: Ping Secondary IP Gateway
+    ansible.builtin.command: ping -c 3 -I {{ second_ip }} 172.21.174.129
+    register: second_gw_ping_result
+    when: second_ip is defined
+
+  - name: Secondary IP Gateway ping Results
+    debug:
+      msg: "{{ second_gw_ping_result.stdout }}"
+    when: second_ip is defined

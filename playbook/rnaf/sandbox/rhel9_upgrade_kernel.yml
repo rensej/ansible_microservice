@@ -1,0 +1,45 @@
+---
+- name: Upgrade kernel on RHEL instance
+  hosts: mtx-lb1-col-2:mtx-lb1-col-3:mtx-lb1-wkr-2:mtx-lb1-app-2:mtx-lb1-acc-2:mtx-lb1-web-2:mtx-lb1-ops-1
+  gather_facts: False
+  become: yes
+  tasks:
+
+  - name: Get the first active connection
+    ansible.builtin.shell: nmcli -t -f name,device,state connection show | grep ':activated' | head -n 1 | cut -d':' -f1
+    register: main_connection
+
+  - name: Apply nmcli update for virtio workaround
+    ansible.builtin.command: "nmcli connection modify {{ main_connection.stdout }} ethtool.feature-rx-gro-hw off"
+    notify: Restart NetworkManager
+
+  - name: Ensure DNF cache is up-to-date
+    dnf:
+      update_cache: yes
+
+  - name: Install latest kernel package
+    dnf:
+      name: kernel
+      state: latest
+
+  - name: Reboot the system
+    reboot:
+      reboot_timeout: 180
+
+  - name: Wait for the system to come back online
+    wait_for_connection:
+      timeout: 180
+
+  - name: Checking kernel version
+    command: "uname -r"
+    register: kernel_version
+
+  - name: Display kernel version
+    debug:
+      msg: "Kernel version is: {{ kernel_version.stdout }}"
+
+  handlers:
+    - name: Restart NetworkManager
+      service:
+        name: NetworkManager
+        state: restarted

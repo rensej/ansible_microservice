@@ -1,0 +1,21 @@
+
+- hosts: MATRIX
+  gather_facts: False
+  become: True
+
+  tasks:
+
+  - name: Get the first active connection
+    ansible.builtin.shell: nmcli -t -f name,device,state connection show | grep ':activated' | head -n 1 | cut -d':' -f1
+    register: main_connection
+
+  - name: nmcli update for data connection 
+    ansible.builtin.command: "nmcli connection modify {{ main_connection.stdout }} ipv4.dns '172.19.255.100,172.19.255.101'"
+    notify: Restart NetworkManager
+
+
+  handlers:
+    - name: Restart NetworkManager
+      service:
+        name: NetworkManager
+        state: restarted
