@@ -1,0 +1,53 @@
+
+---
+# FALTA EDITAR IPS!
+
+HOSTNAME: COR-CP01
+TYPE: CP
+CONTEXT: GA
+ASN_LOCAL:
+ASN_REMOTE:
+IP_L0_BL1:
+IP_L0_BL2:
+GA_BL1_IP_P2P:
+GA_BL2_IP_P2P:
+GA_VLAN_1:
+GA_VLAN_2:
+GA_L0_BGP:
+GA_L0:
+GA_3_10:
+  IP:
+  MASK:
+GA_3_11:
+  IP:
+  MASK:
+GA_4_10:
+  IP:
+  MASK:
+GA_4_11:
+  IP:
+  MASK:
+GA_5_10:
+  IP:
+  MASK:
+GA_5_11:
+  IP:
+  MASK:
+GA_6_10:
+  IP:
+  MASK:
+GA_6_11:
+  IP:
+  MASK:
+GA_7_10:
+  IP:
+  MASK:
+GA_7_11:
+  IP:
+  MASK:
+GA_8_10:
+  IP:
+  MASK:
+GA_8_11:
+  IP:
+  MASK:

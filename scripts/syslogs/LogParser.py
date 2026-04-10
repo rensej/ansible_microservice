@@ -82,7 +82,8 @@ class FileParser:
                              "from MME_EGTPC_STATE_MOD_BRR_REQ_PENDING to MME_EGTPC_STATE_ACTIVE", "fsm event MME_EMM_EVENT_S1_RLS_REQ in state MME_EMM_STATE_REGISTERED_CONNECTED",
                              "fsm event MME_EMM_EVENT_IM_EXIT_TRIGGER in state MME_EMM_STATE_REGISTERED_CONNECTING","Completed MME Dual Conn NSA procedure  procedure with code 0",
                              "MME_EMM_FSM: Found procedure, msg type 10","Completed MME IM entry procedure  procedure with code 0",
-                             "changed from MME_EGTPC_STATE_ACTIVE to MME_EGTPC_STATE_DWLINK_NOTF_PENDING"]
+                             "changed from MME_EGTPC_STATE_ACTIVE to MME_EGTPC_STATE_DWLINK_NOTF_PENDING", "Internal trap notification 1112 (EGTPCPathFail)",
+                             "change in restart counter detected"]
     
     parsed_logs = ""
     input_log_file_path = ""
@@ -149,17 +150,6 @@ class FileParser:
             list: unique log messages.
         """
         unique_log = []
-        # for log_group in self.log_group_for_summary:
-        #     unique_log.append(log_group)
-        # for log in self.parsed_logs:
-        #     is_grouped_log = False
-        #     for log_group in self.log_group_for_summary:
-        #         if log_group in log["eventmessage"]:
-        #             is_grouped_log = True
-        #             break
-        #     if not is_grouped_log and log["eventmessage"] not in unique_log:
-        #             unique_log.append(log["eventmessage"])
-        #     del log
         
         for log_group in self.log_group_for_summary:
             unique_log.append(log_group)
@@ -201,13 +191,15 @@ class FileParser:
             if len(log_message) > 1:
                 log_statistics.update({ log_message : 0 })
 
+        stored_log = ""
         try:
             #loading from pandas for counting
             chunks = pandas.read_csv(self.parsed_logs, chunksize=100000, usecols=["eventmessage"])
             for chunk in chunks:
-                print("Reading parsed log chunk")
+                print("Reading parsed log chunk from "+self.parsed_logs)
                 for log in chunk["eventmessage"]:
                     is_grouped_log = False
+                    stored_log = log
                     if not isinstance(log, float):
                         for log_group in self.log_group_for_summary:
                             # to avoid reading floats in file
@@ -216,7 +208,7 @@ class FileParser:
                                 is_grouped_log = True
                                 break
                                 
-                        if not is_grouped_log:
+                        if not is_grouped_log and len(log) > 2:
                             log_statistics[log] += 1
                 del chunk
             del chunks
@@ -224,6 +216,8 @@ class FileParser:
             print("Message count completed.")
         except KeyError as key_error:
             print(f"KeyError: {key_error} - Check the log message format.")
+            print(stored_log)
+            traceback.print_exc()
         except Exception as e:
             print(f"An unexpected error occurred in log_message_count: {e}")
             traceback.print_exc()
@@ -254,13 +248,13 @@ class FileParser:
         
         try:
             log_statistics = self.log_message_count()
-            print("Logs counted")
             df = pandas.DataFrame(FileParser.sort_consolidated_file(log_statistics), index=[0])
             print("Dumping log consolidation into: " +os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.csv")
             df.T.to_csv(os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.csv", index=True)
             del log_statistics
             del df
-            os.remove(self.parsed_logs)
+            #os.remove(self.parsed_logs)
+            print("----- Logs parsing finished for file "+self.input_log_file_path+" -----")
         except FileNotFoundError as fnf_error:
             print(f"Error: File not found - {fnf_error}")
 
@@ -272,11 +266,6 @@ class FileParser:
             traceback.print_exc()
             print(f"An unexpected error occurred: {e}")
 
-        
-        #with open(os.path.join(self.output_folder_path, os.path.basename(self.input_log_file_path)) + "-summary.json", 'w') as json_file:
-            # Stores in json format a sorted vertion of the consolidated summary file
-            #son.dump(FileParser.sort_consolidated_file(log_statistics), json_file, indent=4)
-            # dumping as a csv file
 
 
     def multi_thread_processing(folder_path, workers_number):
@@ -326,4 +315,3 @@ class FileParser:
 
 
 FileParser.multi_thread_processing("/home/Syslog/",4)
-#FileParser.process_single_thread("/home/Syslog/")

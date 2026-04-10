@@ -10,7 +10,7 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y software-propert
 #RUN apt install python3-pip && pip install --force-reinstall -I ansible-core==2.15.8
 
 # To run additional python scripts
-RUN pip install pandas
+RUN pip install pandas beautifulsoup4 lxml
 
 # install docker module
 RUN ansible-galaxy collection install community.docker

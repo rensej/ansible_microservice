@@ -1,0 +1,23 @@
+# Validate base infra configs for lab VMs
+
+- hosts: all:!control
+  gather_facts: False
+  become: True
+  vars:
+    nmcli_cmd:
+      - nmcli connection modify data ipv4.never-default yes
+      - nmcli connection modify data -ipv4.routes "10.219.160.128/26 172.21.174.129"
+      - nmcli connection modify data +ipv4.routes "10.219.160.0/24 172.21.174.129"
+      - nmcli con down data && nmcli con up data
+  tasks:
+
+  - name: nmcli update for data connection 
+    ansible.builtin.shell: "{{ item }}"
+    with_items: "{{ nmcli_cmd }}"
+    register: updates
+    when: second_ip is defined
+
+  - name: Print Commands output
+    debug:
+      msg: "{{ updates.results[0].stdout }}"
+    when: second_ip is defined

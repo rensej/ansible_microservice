@@ -12,36 +12,13 @@
       return_content: true
       dest: "{{ issues_file_path }}"
 
-  
-  - name: Parsing HTML code
+      
+  - name: Building Janus Issues Summarization
     ansible.builtin.shell:
-      cmd: "egrep 'td' {{ issues_file_path }} | egrep '\\-|href' | egrep -v 'Details|2025|N/A' | sed 's/<td>//g' | sed 's/<\\/td>//g'"
-    register: issues
+      cmd: "python3 /home/scripts/Janus/JanusIssuesParser.py {{ issues_file_path }} -o /home/output/janus-parsed-issues.csv -s /home/output/janus-parsed-issues-summary.csv"
 
-  - name: delete issues_file_path
+
+  - name: Delete issues_file_path
     ansible.builtin.file:
       state: absent
       path: "{{ issues_file_path }}"
-
-  - name: Split Hostname and Issue lists
-    set_fact:
-      hostnames: "{{ issues.stdout_lines[::2] }}"
-      host_issues: "{{ issues.stdout_lines[1::2] }}"
-      unique_issues: "{{ issues.stdout_lines[1::2] | unique }}"
-
-  - ansible.builtin.shell:
-      cmd: " echo '{{ item[1].split('>')[1].split('<')[0] }} - {{ item[0] | trim }}'"
-    loop: "{{ hostnames | zip(host_issues) | list}}"
-    register: issues_host
-
-  - set_fact:
-      issues_host_map: []
-  - set_fact:
-      issues_host_map: "{{ issues_host_map + [item.stdout]}}"
-    loop: "{{ issues_host.results }}"
-      
-  - name: Formated output unique
-    debug:
-      msg: "{{ issues_host_map | sort | unique }}"
-
-
